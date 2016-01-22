@@ -15,31 +15,52 @@ class RootViewController: UIViewController {
 
         view.backgroundColor = UIColor.whiteColor()
         
-        let button = UIButton();
-        view.addSubview(button)
-        button.setTitle("View One", forState: .Normal)
-        button.setTitleColor(UIColor.blueColor(), forState: .Normal)
-        button.autoresizingMask = [
+        let buttonOne = UIButton();
+        view.addSubview(buttonOne)
+        buttonOne.setTitle("View One", forState: .Normal)
+        buttonOne.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        buttonOne.autoresizingMask = [
             .FlexibleTopMargin,
             .FlexibleLeftMargin,
             .FlexibleRightMargin,
             .FlexibleBottomMargin
         ]
-        button.translatesAutoresizingMaskIntoConstraints = false
+        buttonOne.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activateConstraints([
-            button.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
-            button.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: 50)
+            buttonOne.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            buttonOne.topAnchor.constraintEqualToAnchor(view.topAnchor, constant: 50)
             ])
+        buttonOne.addTarget(self, action: "buttonOnePressed:", forControlEvents: .TouchUpInside)
         
-        button.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
-
+        let buttonTwo = UIButton();
+        view.addSubview(buttonTwo)
+        buttonTwo.setTitle("View Two", forState: .Normal)
+        buttonTwo.setTitleColor(UIColor.blueColor(), forState: .Normal)
+        buttonTwo.autoresizingMask = [
+            .FlexibleTopMargin,
+            .FlexibleLeftMargin,
+            .FlexibleRightMargin,
+            .FlexibleBottomMargin
+        ]
+        buttonTwo.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activateConstraints([
+            buttonTwo.centerXAnchor.constraintEqualToAnchor(view.centerXAnchor),
+            buttonTwo.topAnchor.constraintEqualToAnchor(buttonOne.bottomAnchor, constant: 50)
+            ])
+        buttonTwo.addTarget(self, action: "buttonTwoPressed:", forControlEvents: .TouchUpInside)
+        
     }
     
-    func buttonPressed(sender: UIButton!) {
+    func buttonOnePressed(sender: UIButton!) {
         let vc1 = ViewControllerOne()
         self.presentViewController(vc1, animated: true, completion: nil)
     }
-
+    
+    func buttonTwoPressed(sender: UIButton!) {
+        let vc2 = ViewControllerTwo()
+        self.presentViewController(vc2, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

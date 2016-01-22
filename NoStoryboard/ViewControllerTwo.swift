@@ -1,5 +1,5 @@
 //
-//  ViewControllerOne.swift
+//  ViewControllerTwo.swift
 //  NoStoryboard
 //
 //  Created by Michal Cierniak on 1/21/16.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ViewControllerOne: UIViewController {
+class ViewControllerTwo: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor.grayColor()
+        view.backgroundColor = UIColor.brownColor()
         
         let button = UIButton();
         view.addSubview(button)
-        button.setTitle("Back from One", forState: .Normal)
+        button.setTitle("Back from Two", forState: .Normal)
         button.setTitleColor(UIColor.blueColor(), forState: .Normal)
         button.autoresizingMask = [
             .FlexibleTopMargin,
