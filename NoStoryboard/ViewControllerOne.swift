@@ -1,5 +1,5 @@
 //
-//  RootViewController.swift
+//  ViewControllerOne.swift
 //  NoStoryboard
 //
 //  Created by Michal Cierniak on 1/21/16.
@@ -8,16 +8,16 @@
 
 import UIKit
 
-class RootViewController: UIViewController {
+class ViewControllerOne: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = UIColor.whiteColor()
+        
+        view.backgroundColor = UIColor.grayColor()
         
         let button = UIButton();
         view.addSubview(button)
-        button.setTitle("View One", forState: .Normal)
+        button.setTitle("Back", forState: .Normal)
         button.setTitleColor(UIColor.blueColor(), forState: .Normal)
         button.autoresizingMask = [
             .FlexibleTopMargin,
@@ -32,12 +32,10 @@ class RootViewController: UIViewController {
             ])
         
         button.addTarget(self, action: "buttonPressed:", forControlEvents: .TouchUpInside)
-
     }
     
     func buttonPressed(sender: UIButton!) {
-        let vc1 = ViewControllerOne()
-        self.presentViewController(vc1, animated: true, completion: nil)
+        dismissViewControllerAnimated(true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
