@@ -1,0 +1,48 @@
+//
+//  RootViewController.swift
+//  NoStoryboard
+//
+//  Created by Michal Cierniak on 1/21/16.
+//  Copyright © 2016 Home. All rights reserved.
+//
+
+import UIKit
+
+class RootViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        view.backgroundColor = UIColor.grayColor()
+        let label = UILabel()
+        view.addSubview(label)
+        label.text = "Root view"
+        label.autoresizingMask = [
+            .FlexibleTopMargin,
+            .FlexibleLeftMargin,
+            .FlexibleRightMargin,
+            .FlexibleBottomMargin
+        ]
+        label.sizeToFit()
+        label.center = CGPointMake(view.bounds.midX, view.bounds.midY)
+        label.frame.makeIntegralInPlace()
+        // Do any additional setup after loading the view.
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}
